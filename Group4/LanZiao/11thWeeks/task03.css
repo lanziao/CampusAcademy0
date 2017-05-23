@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,li,ul,p,h1,h2,dd,dl,td,tr,table,input{ margin: 0;padding: 0;font-family: "宋体";}
+ul{ list-style:none;padding:0;margin:0;}
+input { outline: none;}
+a { text-decoration: none;}
+img { vertical-align: top; border: none;}
+
+.clear{ zoom:1;}
+.clear:after{ content:""; display:block; clear:both;}
+
+.all,.left,.center,.right { padding: 20px;border: 1px solid #999999;}
+
+.all { background:#eeeeee;height: auto;margin:20px 20px;}
+
+.left { background:#FFFFFF;width:160px;float: left;}
+.left .logo { float:left;}
+.left .name { float: left; margin-left: 16px;}
+
+.right {background:#FFFFFF;float: right;width: 80px;}
+.right .img { margin-bottom: 20px;}
+
+.center { background:#FFFFFF;margin: 0 140px 0px 220px;}
+.center p { margin: 10px auto;line-height: 20px;font-size: 14px;}

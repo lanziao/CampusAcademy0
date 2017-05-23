@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wrap{width: 400px;height: 200px;background: #ccc;position: absolute;margin: auto;top: 0;left: 0;right: 0;bottom: 0;overflow: hidden;}
+.left-top{border-radius: 50px;width: 100px;height: 100px;background: #fc0;position: absolute;top: -50px;left: -50px;}
+.right-bottom{border-radius: 50px;width: 100px;height: 100px;background: #fc0;position: absolute;bottom: -50px;right: -50px;}
