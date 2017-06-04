@@ -1,0 +1,1096 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*默认样式重置代码区*/
+
+body,ul,li,p,h1,h2,h3,h4,h5,h6,img,br,hr,table,tr,td,dl,dt,dd,form,input {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+input {
+	background: none;
+}
+/*清浮动代码*/
+
+.clear {
+	zoom:1;
+}
+.clear:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+	font-family: "微软雅黑";
+}
+
+.header {
+	margin: 0 auto;
+	height: 36px;
+	width:1180px;;
+	background: #34495e;
+	position: relative;
+}
+
+.header p {
+	display:inline-block;
+}
+
+.header p,a {
+	font-family:"微软雅黑";
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.header img {
+	position: absolute;
+	left: 20px;
+	bottom: 11px;
+
+}
+
+.header .web {
+	position: absolute;
+	left: 42px;
+	bottom: 9px;
+}
+
+.header .what {
+	position: absolute;
+	left: 960px;
+	bottom: 9px;
+}
+
+.header p {
+	position: absolute;
+	left: 1073px;
+	bottom: 9px;
+}
+
+.header .login-register {
+	position: absolute;
+	left: 1098px;
+	bottom: 9px;
+}
+
+.nav {
+	margin: 0 auto;
+	position: relative;
+	width: 1180px;
+	height: 73px;
+}
+
+.nav .bird {
+	position: absolute;
+	top: 12px;
+}
+
+.nav .bird {
+	position: absolute;
+	top: 12px;
+}
+
+.nav .campussay {
+	position: absolute;
+	top: 12px;
+	left: 40px;
+}
+
+.nav .line {
+	position: absolute;
+	font-size:40px; 
+	left: 150px;
+	top: 6px;
+	color: #dddddd;
+}
+
+.nav .nav-school {
+	position: absolute;
+	left: 174px;
+	top: 15px;
+}
+
+.nav .nav-school p {
+	font-size: 14px;
+}
+
+.nav .nav-school a {
+	display: block;
+	width: 60px;
+	height: 22px;
+	background:url(1-images/school.png);
+}
+
+.nav a {
+	position: absolute;
+	color: #000000;
+	font-size: 16px;
+	top: 26px;
+}
+
+.nav a:hover {
+	color: #00caab;
+}
+
+.nav .shouye {
+	left: 645px;
+}
+
+.nav .tingtingtang {
+	left: 738px;
+}
+
+.nav .huatishe {
+	left: 845px;
+}
+
+.nav .fabutalking {
+	left: 953px;
+}
+
+.nav .mycompussay {
+	left: 1100px;
+}
+
+.main {
+	margin: 0 auto;
+	width:1180px;
+}
+
+.main .main-1 .main-1-top {
+	position: relative;
+	height: 58px;
+}
+
+.main .main-1 .main-1-top .line {
+	position: absolute;
+	left: -3px;
+	top: 10px;
+	color: #00caab;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.main .main-1 .main-1-top .title {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.main .main-1 .main-1-top a {
+	position: absolute;
+	right: 10px;
+	top: 26px;
+	color: #00caab;
+	font-size: 12px;
+}
+
+.main .main-1 .main-1-bottom .main-1-b-1 {
+	width: 220px;
+	height: 210px;
+	background: url(1-images/m-b-1-1.png);
+	display: inline-block;
+}
+
+.main .main-1 .main-1-b-1 a {
+	position: absolute;
+	left: 250px;
+	margin-top: 13px;
+	
+}
+
+.main .main-1 .main-1-b-2 ,.main-1-b-3 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-1.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-1 .main-1-b-4,.main-1-b-5 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-2.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-1 .main-1-b-2 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-1 .main-1-b-2 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-1 .main-1-b-2 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-1 .main-1-b-2 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-1 .main-1-b-3 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-1 .main-1-b-3 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-1 .main-1-b-3 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-1 .main-1-b-3 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-1 .main-1-b-4 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-1 .main-1-b-4 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-1 .main-1-b-4 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-1 .main-1-b-4 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-1 .main-1-b-5 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-1 .main-1-b-5 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-1 .main-1-b-5 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-1 .main-1-b-5 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-2 .main-2-top {
+	position: relative;
+	height: 58px;
+}
+
+.main .main-2 .main-2-top .line {
+	position: absolute;
+	left: -3px;
+	top: 10px;
+	color: #00caab;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.main .main-2 .main-2-top .title {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.main .main-2 .main-2-top a {
+	position: absolute;
+	right: 10px;
+	top: 26px;
+	color: #00caab;
+	font-size: 12px;
+}
+
+.main .main-2 .main-2-bottom .main-2-b-1 {
+	width: 220px;
+	height: 210px;
+	background: url(1-images/m-b-2-1.png);
+	display: inline-block;
+}
+
+.main .main-2 .main-2-b-1 a {
+	position: absolute;
+	left: 250px;
+	margin-top: 13px;
+	
+}
+
+.main .main-2 .main-2-b-2,.main-2-b-3 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-1.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-2 .main-2-b-4,.main-2-b-5 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-2.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-2 .main-2-b-2 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-2 .main-2-b-2 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-2 .main-2-b-2 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-2 .main-2-b-2 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-2 .main-2-b-3 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-2 .main-2-b-3 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-2 .main-2-b-3 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-2 .main-2-b-3 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-2 .main-2-b-4 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-2 .main-2-b-4 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-2 .main-2-b-4 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-2 .main-2-b-4 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-2 .main-2-b-5 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-2 .main-2-b-5 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-2 .main-2-b-5 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-2 .main-2-b-5 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-3 .main-3-top {
+	position: relative;
+	height: 58px;
+}
+
+.main .main-3 .main-3-top .line {
+	position: absolute;
+	left: -3px;
+	top: 10px;
+	color: #00caab;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.main .main-3 .main-3-top .title {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.main .main-3 .main-3-top a {
+	position: absolute;
+	right: 10px;
+	top: 26px;
+	color: #00caab;
+	font-size: 12px;
+}
+
+.main .main-3 .main-3-bottom .main-3-b-1 {
+	width: 220px;
+	height: 210px;
+	background: url(1-images/m-b-3-1.png);
+	display: inline-block;
+}
+
+.main .main-3 .main-3-b-1 a {
+	position: absolute;
+	left: 250px;
+	margin-top: 13px;
+	
+}
+
+.main .main-3 .main-3-b-2,.main-3-b-3 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-1.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-3 .main-3-b-4,.main-3-b-5 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-2.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-3 .main-3-b-2 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-3 .main-3-b-2 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-3 .main-3-b-2 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-3 .main-3-b-2 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-3 .main-3-b-3 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-3 .main-3-b-3 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-3 .main-3-b-3 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-3 .main-3-b-3 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-3 .main-3-b-4 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-3 .main-3-b-4 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-3 .main-3-b-4 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-3 .main-3-b-4 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-3 .main-3-b-5 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-3 .main-3-b-5 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-3 .main-3-b-5 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-3 .main-3-b-5 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-4 .main-4-top {
+	position: relative;
+	height: 58px;
+}
+
+.main .main-4 .main-4-top .line {
+	position: absolute;
+	left: -3px;
+	top: 10px;
+	color: #00caab;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.main .main-4 .main-4-top .title {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.main .main-4 .main-4-top a {
+	position: absolute;
+	right: 10px;
+	top: 26px;
+	color: #00caab;
+	font-size: 12px;
+}
+
+.main .main-4 .main-4-bottom .main-4-b-1 {
+	width: 220px;
+	height: 210px;
+	background: url(1-images/m-b-4-1.png);
+	display: inline-block;
+}
+
+.main .main-4 .main-4-b-1 a {
+	position: absolute;
+	left: 250px;
+	margin-top: 13px;
+	
+}
+
+.main .main-4 .main-4-b-2,.main-4-b-3 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-1.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-4 .main-4-b-4,.main-4-b-5 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-2.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-4 .main-4-b-2 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-4 .main-4-b-2 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-4 .main-4-b-2 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-4 .main-4-b-2 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-4 .main-4-b-3 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-4 .main-4-b-3 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-4 .main-4-b-3 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-4 .main-4-b-3 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-4 .main-4-b-4 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-4 .main-4-b-4 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-4 .main-4-b-4 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-4 .main-4-b-4 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-4 .main-4-b-5 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-4 .main-4-b-5 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-4 .main-4-b-5 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-4 .main-4-b-5 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-5 .main-5-top {
+	position: relative;
+	height: 58px;
+}
+
+.main .main-5 .main-5-top .line {
+	position: absolute;
+	left: -3px;
+	top: 10px;
+	color: #00caab;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.main .main-5 .main-5-top .title {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.main .main-5 .main-5-top a {
+	position: absolute;
+	right: 10px;
+	top: 26px;
+	color: #00caab;
+	font-size: 12px;
+}
+
+.main .main-5 .main-5-bottom .main-5-b-1 {
+	width: 220px;
+	height: 210px;
+	background: url(1-images/m-b-5-1.png);
+	display: inline-block;
+}
+
+.main .main-5 .main-5-b-1 a {
+	position: absolute;
+	left: 250px;
+	margin-top: 13px;
+	
+}
+
+.main .main-5 .main-5-b-2,.main-5-b-3 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-1.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-5 .main-5-b-4,.main-5-b-5 {
+	position: relative;
+	width: 220px;
+	height: 210px;
+	background: url(1-images/all-2.png) no-repeat;
+	display: inline-block;
+	margin-left: 12px;
+}
+
+.main .main-5 .main-5-b-2 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-5 .main-5-b-2 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-5 .main-5-b-2 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-5 .main-5-b-2 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-5 .main-5-b-3 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-5 .main-5-b-3 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-5 .main-5-b-3 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-5 .main-5-b-3 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -84px;
+}
+
+.main .main-5 .main-5-b-4 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-5 .main-5-b-4 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-5 .main-5-b-4 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-5 .main-5-b-4 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.main .main-5 .main-5-b-5 .text {
+	position: absolute;
+	top: 136px;
+}
+
+.main .main-5 .main-5-b-5 .text p {
+	position: relative;
+	font-size: 12px;
+	color: #777777;
+	line-height: 25px;
+}
+
+.main .main-5 .main-5-b-5 .text .baoyan {
+	position: absolute;
+	left: 40px;
+	top: 24px;
+}
+
+.main .main-5 .main-5-b-5 .text .price {
+	color: #fca825;
+	font-size: 19px;
+	position: absolute;
+	bottom: 0px;
+	right: -80px;
+}
+
+.footer {
+	margin: 0 auto;
+	margin-top: 58px;
+	width: 1180px;
+	height: 140px;
+	background: #34495e;
+	position: relative;
+}
+
+.footer .bird {
+	position: absolute;
+	top: 47px;
+	left: 0px;
+}
+
+.footer .campussay1 {
+	position: absolute;
+	top: 47px;
+	left: 39px;
+} 
+
+.footer .weibo {
+	position: absolute;
+	top: 49px;
+	left: 148px;
+}
+
+.footer .wechat {
+	position: absolute;
+	top: 49px;
+	left: 202px;
+}
+
+.footer p {
+	font-family: "arial";
+	color: #FFFFFF;
+	font-size: 12px;
+	position: absolute;
+	left: 810px;
+	top: 76px;
+}
+
+.footer .a-1 {
+	position: absolute;
+	top:50px;
+	left:938px;
+}
+
+.footer .a-2 {
+	position: absolute;
+	top:50px;
+	left:1038px;
+}
+
+.footer .a-3 {
+	position: absolute;
+	top:50px;
+	left:1122px;
+}
+
+
+.box {
+	background: url(1-images/background.png) repeat-x;
+}
+
+.main-1-b-2 a,.main-1-b-3 a,.main-1-b-4 a,.main-1-b-5 a,.main-2-b-2 a,.main-2-b-3 a,.main-2-b-4 a,.main-2-b-5 a,.main-3-b-2 a,.main-3-b-3 a,.main-3-b-4 a,.main-3-b-5 a,.main-4-b-2 a,.main-4-b-3 a,.main-4-b-4 a,.main-4-b-5 a,.main-5-b-2 a,.main-5-b-3 a,.main-5-b-4 a,.main-5-b-5 a {
+	color: #000000;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.pic {
+	display: inline-block;
+	width: 220px;
+	height: 210px;
+	position: absolute;
+	left: 0px;
+	top: -136px;
+	background: url(1-images/all-1.png) no-repeat;
+}
+
+.pic1 {
+	display: inline-block;
+	width: 220px;
+	height: 210px;
+	position: absolute;
+	left: 0px;
+	top: -136px;
+	background: url(1-images/all.png) no-repeat;
+}
+
+.pic:hover,.pic1:hover {
+	width: 220px;
+	height: 130px;
+	background: #000000;
+	filter:Alpha(Opacity=60);
+	opacity:0.6;
+	
+}
