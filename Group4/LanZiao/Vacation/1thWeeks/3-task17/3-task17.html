@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>3-task17</title>
+	<link rel="stylesheet" href="clearer.css">
+
+	<script type="text/javascript">
+		
+		window.onload=function() {
+	    	
+	        var day_box=document.getElementById('day_box');
+	        var week_box=document.getElementById('week_box');
+	        var month_box=document.getElementById('month_box');
+
+	        var city=document.getElementById('city');
+	        var cities=city.getElementsByTagName('li')
+	        var beiJing=document.getElementById('beijing');
+	        var shangHai=document.getElementById('shanghai');
+	        var guangZhou=document.getElementById('guangzhou');
+	        var chongQing=document.getElementById('chongqing');
+
+	        var day = document.getElementById('day');
+	        var week = document.getElementById('week');
+	        var month = document.getElementById('month');
+	        
+	        var x = 1;
+	        var arr=[];
+	        var arrBeijing=[];
+	        var arrShanghai=[];
+	        var arrGuangzhou=[];
+	        var arrChongqing=[];
+
+	        var timer=null;
+
+
+	        function show (a) {
+	        	switch (a) {
+	    			case 30:
+						day.className='active';
+			        	day_box.style.display='flex';
+
+			        	week.className='';
+			        	week_box.style.display='none';
+
+			        	month.className='';
+			        	month_box.style.display='none';
+			
+						break;
+
+					case 7:
+						day.className='';
+			        	day_box.style.display='none';
+
+			        	week.className='active';
+			        	week_box.style.display='flex';
+
+			        	month.className='';
+			        	month_box.style.display='none';
+			      
+						break;
+
+					case 3:
+						day.className='';
+			        	day_box.style.display='none';
+
+			        	week.className='';
+			        	week_box.style.display='none';
+
+			        	month.className='active';
+			        	month_box.style.display='flex';
+			     
+						break;
+	    		}
+	        }
+
+	    	function peek (w,a,n,m) {
+
+	    		switch (a) {
+	    			case 30:
+			        	while(day_box.hasChildNodes()) {
+			    			day_box.removeChild(day_box.firstChild);
+		    			}
+						break;
+					case 7:
+			        	while(week_box.hasChildNodes()) {  
+		    				week_box.removeChild(week_box.firstChild);
+		    			}
+						break;
+					case 3:
+			        	while(month_box.hasChildNodes()) {
+			    			month_box.removeChild(month_box.firstChild);
+		    			}
+						break;
+	    		}
+
+	    		for ( i=0; i<a; i++ )
+	    		{
+					Math.random()*(m-n);
+					var num = Math.random()*(m-n)+ n;
+					num = parseInt(num, 10); //生成n-m间的数
+
+					arr.unshift(num);
+						
+					var c_div = document.createElement("div");// 创建div元素			
+
+					c_div.style.height = num + 'px';
+					c_div.style.width = w +'px';
+
+					switch (a) {
+						case 30:
+							day_box.appendChild(c_div);
+							break;
+						case 7:
+							week_box.appendChild(c_div);
+							break;
+						case 3:
+							month_box.appendChild(c_div);
+							break;
+					}
+
+				}
+				
+	        }
+	    	
+	    	function mouseOver () {
+	    		for(i=0;i<cities.length;i++) {
+	    			cities[i].style.display='block';
+	    		}
+	    	}
+
+	    	function mouseOut () {
+	    		for(i=0;i<cities.length;i++) {
+	    			cities[i].style.display='none';
+	    		}
+	    	}
+	    	
+	    	switch (day.className) {
+	    		case 'active':
+	    			peek(15,30,250,500);peek(70,7,250,500);peek(150,3,250,500);
+	    			break;
+	    		default:
+	    			break;
+	    	}//打开页面生成
+
+	    	city.onmouseover=function() {
+	    		mouseOver();
+	    	}
+
+	    	city.onmouseout=function() {
+	    		mouseOut();
+
+	    		switch (x) {
+	    			case 1:
+	    				beiJing.style.display='block';
+	    				break;
+	    			case 2:
+	    				shangHai.style.display='block';
+	    				break;
+	    			case 3:
+	    				guangZhou.style.display='block';
+	    				break;
+	    			case 4:
+	    				chongQing.style.display='block';
+	    				break;
+	    		}
+	    	}
+
+
+	    	beiJing.onclick=function() {
+	    		peek(15,30,250,500);peek(70,7,250,500);peek(150,3,250,500);
+	        	mouseOut();
+	    		beiJing.style.display='block';
+	    		x=1;
+	        }
+
+	        shangHai.onclick=function() {
+	        	peek(15,30,150,400);peek(70,7,150,400);peek(150,3,150,400);
+	        	mouseOut();
+	    		shangHai.style.display='block';
+	    		x=2;
+	        }
+
+	       	guangZhou.onclick=function() {
+	        	peek(15,30,50,250);peek(70,7,50,250);peek(150,3,50,250);
+	        	mouseOut();
+	    		guangZhou.style.display='block';
+	    		x=3;
+	       	}
+
+	       	chongQing.onclick=function() {
+				peek(15,30,100,500);peek(70,7,100,500);peek(150,3,100,500);
+	        	mouseOut();
+	    		chongQing.style.display='block';
+	    		x=4;
+	       	}
+
+	    
+
+	    
+
+
+	    	day.onclick=function() {	        	
+				show(30);
+	        }
+
+	        week.onclick=function() {								show(7);
+	        }
+
+	        month.onclick=function() {				
+				show(3);
+	        }
+
+	    }
+
+	    //  for(var i=0;i<cities.length;i++)
+	    //  {
+	    //  	cities[i].onclick=function (){
+	    //     	peek(15,30);peek(70,7);peek(150,3);
+	    //     	for(j=0;j<cities.length;j++) {
+	    // 			cities[j].style.display='none';
+	    			
+	    // 		}
+	    // 		this.style.display='block';
+	    // 		x=i+1;
+	    //    	}
+	   	// }
+
+	</script>
+
+	<style>
+
+		input{
+			margin:0;
+			text-outline:none;
+			list-style:none;
+			appearance:none;
+			border:none;
+			text-decoration:none;
+			color:#000;
+		}
+
+		#form-gra-time {
+			position: relative;
+			width: 740px;
+			height: 100px;
+			border-radius: 20px;
+		}
+
+		#father_div .num_box {
+			display: flex;
+			justify-content: center;
+			align-items:flex-end;
+			width: 760px;
+			height: 500px;
+			border-radius: 20px;
+		}
+
+		#father_div #day_box {
+			border: solid #D08FE6 4px;
+		}
+
+		#father_div #week_box {
+			border: solid #97CFFE 4px;
+			display: none;
+			}
+
+		#father_div #month_box {
+			border: solid #FF9EF6 4px;
+			display: none;
+		}
+
+		#day_box div {
+			margin-right: 5px;            
+			background-color: red;
+			color: #FFFFFF;	
+		}
+
+		#week_box div {
+			margin-right: 15px;            
+			background-color: red;
+			color: #FFFFFF;	
+		}
+
+		#month_box div {
+			margin-right: 25px;            
+			background-color: red;
+			color: #FFFFFF;	
+		}
+
+
+		input {
+			width: 40px;
+			height: 40px;
+			background: #FFFFFF;
+			border: solid #878787 2px;
+			border-radius: 50%;
+			font-size: 20px;
+			cursor:pointer;
+		}
+		
+		.active {
+			background: #EEFF8F;
+		}
+
+		#city {
+			position: absolute;
+			left: 200px;
+			top: 29px;
+			display: inline-block;
+			width: 40px;
+			border:solid #000000 1px;
+		}
+
+		#city li {
+			display: none;
+		}
+
+		#city #beijing {
+			display: block;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<fieldset id="form-gra-time">
+
+	<legend>请选择日期粒度：</legend>
+
+		<input id="day" class="active" value="日" type="button">
+		<input id="week" value="周" type="button">
+		<input id="month" value="月" type="button">
+
+	<ul id="city">
+
+		<li id="beijing">北京</li>
+		<li id="shanghai">上海</li>
+		<li id="guangzhou">广州</li>
+		<li id="chongqing">重庆</li>
+
+	</ul>
+
+</fieldset>
+
+
+<div id="father_div">
+
+	<div id="day_box" class="num_box">
+
+	</div>
+
+	<div id="week_box" class="num_box">
+		
+	</div>
+
+	<div id="month_box" class="num_box">
+		
+	</div>
+
+</div>
+	
+</body>
+
+</html>

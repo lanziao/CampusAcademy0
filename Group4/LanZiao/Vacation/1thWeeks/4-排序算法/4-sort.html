@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+	
+	window.onload = function () {
+		
+		var lIn = document.getElementById ('left_in');
+		var rIn = document.getElementById ('right_in');
+		var lOut = document.getElementById ('left_out');
+		var rOut = document.getElementById ('right_out');
+		var text = document.getElementById ('text');
+		var ranIn = document.getElementById ('random_in');
+		var sOrt = document.getElementById ('sort');
+
+		var box = document.getElementById("box");
+		var div = box.getElementsByTagName('div');
+		
+
+		var i = 0;
+		var arr = [];
+
+		lIn.onclick = function lAddLi () {
+			if (text.value=='')
+				{
+					alert('请在文本框内进行输入（只支持输入数字）');
+				}
+			else if (isNaN(text.value))
+				{
+					alert('请在文本框内输入纯数字！');
+				}
+			
+			else if (text.value < 10 || text.value > 100)
+				{
+					alert('请输入10~100以内的纯数字！');
+				}
+			else if (div.length>60)
+				{
+					alert('已达到上限60！不能再输入');
+				}
+			else {
+				
+				arr.unshift(text.value);
+				
+				var c_div = document.createElement("div");// 创建div元素
+				
+				c_div.style.height = text.value*5 + 'px';
+				c_div.style.width = 5 +'px';
+				box.insertBefore(c_div,box.childNodes[0]);// 添加到父级里面
+					
+				}
+				
+			
+			}
+			
+		rIn.onclick = function rAddLi () {
+			if (text.value=='')
+				{
+					alert('请在文本框内进行输入（只支持10~100以内的纯数字）');
+				}
+			else if (isNaN(text.value))
+				{
+					alert('请在文本框内输入10~100以内的纯数字！');
+				}
+			else if (text.value < 10 || text.value > 100)
+				{
+					alert('请输入10~100以内的纯数字！');
+				}
+			else if (div.length>60)
+				{
+					alert('已达到上限60！不能再输入');
+				}
+			else {
+				
+				arr.push(text.value);
+				
+				var c_div = document.createElement("div");// 创建div元素
+				
+				c_div.style.height = text.value*5 + 'px';// 给创建的元素里面添加输入的内容
+				c_div.style.width = 5 + 'px';
+				box.appendChild(c_div);// 添加到父级里面/ 添加到父级里面
+					
+				}
+				
+			
+			}
+
+		lOut.onclick = function () {
+
+			box.removeChild(div[0]);
+			
+		}
+
+		rOut.onclick = function () {
+
+			box.removeChild(div[div.length-1]);
+			
+		}	
+		
+		ranIn.onclick = function () {
+
+
+
+				while(box.hasChildNodes()) {  
+
+        			box.removeChild(box.firstChild);
+        		}
+    			//当数组arr长度大于0即box里存在有div的时候。获取div。当box里的子节点存在，进入循环。删除box的第一个子元素。一直到box不含有
+
+			for ( i=0; i<60; i++ )
+			{
+
+				Math.random()*90
+				var num = Math.random()*90 + 10;
+				num = parseInt(num, 10);
+
+				arr.unshift(num);
+					
+				var c_div = document.createElement("div");// 创建div元素
+					
+				c_div.style.height = num*5 + 'px';
+				c_div.style.width = 5 +'px';
+				box.insertBefore(c_div,box.childNodes[0]);
+				
+			}
+	}
+
+		sOrt.onclick=function () {
+
+			
+
+			var s_div = box.getElementsByTagName('div');
+    		
+    		var len = s_div.length;
+
+   			for (var i = 0; i < len; i++) {
+
+	        	for (var j = 0; j < len - 1 - i; j++) {
+
+	            	if (s_div[j].offsetHeight > s_div[j+1].offsetHeight) {        //相邻元素两两对比
+	                	var temp = s_div[j+1].style.height;        //元素交换
+	                	s_div[j+1].style.height = s_div[j].style.height;
+	                	s_div[j].style.height = temp;
+	            	}
+        		}
+    		}
+    
+		}	
+
+	}
+	
+	
+
+	
+
+	</script>
+<link href="../clearer.css" rel="stylesheet" type="text/css">
+
+
+<style>
+	
+	#box div {
+		
+		margin-right: 3px;            
+		background-color: red;
+		color: #FFFFFF;	
+		
+	}
+	
+	#box {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		border: solid 1px;
+		height: 520px;
+		width: 650px;
+	}
+
+</style>
+</head>
+
+<body>
+
+<div id="inp">
+
+<input type="text" id="text" />
+<input type="button" id="left_in" value="左侧入" /> 
+<input type="button" id="right_in" value="右侧入" /> 
+<input type="button" id="left_out" value="左侧出" /> 
+<input type="button" id="right_out" value="右侧出" /> 
+<input type="button" id="random_in" value="生成60个随机数" /> 
+<input type="button" id="sort" value="排序" />
+
+</div>
+
+<div id="box">
+
+</div>
+
+</body>
+</html>

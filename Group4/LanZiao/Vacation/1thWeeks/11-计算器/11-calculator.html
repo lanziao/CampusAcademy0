@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+
+	<script>
+
+	window.onload = function() {
+
+		
+
+		var a=0;
+		var b=0;
+		var c=0;
+		var e=0;
+		var j_num=0;
+		var result=0;
+
+		var sCreen = document.getElementById('screenName')
+		
+		var nBtn = document.getElementsByClassName('num_buttons');
+
+		var pLus = document.getElementById('pLus');
+		var mInus = document.getElementById('mInus');
+		var mUltiply = document.getElementById('mUltiply');
+		var dIvided = document.getElementById('dIvided');
+		var rEmainder = document.getElementById('rEmainder');
+		var eQual = document.getElementById('eQual');
+
+		var bAck = document.getElementById('bAck');
+		var cLear = document.getElementById('cLear');
+
+
+
+		function screen_change(x) {
+			sCreen.value+=x;
+		}
+
+		function screen_show() {
+			a=parseFloat(sCreen.value);//转换成浮点数
+			sCreen.value="";
+		}
+
+		function equelFun() {
+			var b=parseFloat(sCreen.value);
+			switch (j_num) {
+				case 1:
+					result=(a*100+b*100)/100;
+					break;
+				case 2:
+					result=(a*100-b*100)/100;
+					break;
+				case 3:
+					result=((a*100)*(b*100))/10000;
+					break;
+				case 4:
+					result=(a*100)/(b*100);
+					break;
+				case 5:
+					result=a%b;
+					break;
+				}
+			var i=result.toString();
+			sCreen.value=i;
+			c=1;
+		}
+
+		function clear_all() {
+			a=0;
+			b=0;
+			e=0;
+			j_num=0;
+			result=0;
+			sCreen.value="";
+		}
+
+		for(i=0;i<nBtn.length;i++){
+			nBtn[i].onclick = function() {
+				if(c==1){
+					sCreen.value="";
+				};
+				screen_change(this.value);
+				c=0;
+			}
+		}
+
+		//定义一个全局变量。按下计算符号后变为1。在按计算符号的时候判断是否等于1.如果等于1就调到执行等于号。
+		pLus.onclick=function() {
+			if (j_num!=0)
+			{
+				equelFun();
+				a=result;
+			}
+			else {
+				j_num=1;
+				screen_show();
+			}
+		}
+
+		mInus.onclick=function() {
+			if (j_num!=0)
+			{
+				equelFun();
+				a=result;
+			}
+			else {
+				j_num=2;
+				screen_show();
+			}
+		}
+
+		mUltiply.onclick=function() {
+			if (j_num!=0)
+			{
+				equelFun();
+				a=result;
+			}
+			else {
+				j_num=3;
+				screen_show();
+			}
+		}
+
+		dIvided.onclick=function() {
+			if (j_num!=0)
+			{
+				equelFun();
+				a=result;
+			}
+			else {
+				j_num=4;
+				screen_show();
+			}
+		}
+
+		rEmainder.onclick=function() {
+			if (j_num!=0)
+			{
+				equelFun();
+				a=result;
+			}
+			else {
+				j_num=5;
+				screen_show();
+			}
+		}
+
+
+		eQual.onclick=function() {
+			if(e!=0)
+			{
+				alert("请不要连续输入等号！")
+				clear_all();
+			}
+			else {
+				equelFun();
+				e=1;
+			}
+		}
+
+
+		bAck.onclick=function() {
+			var oLd=sCreen.value;
+			var nEw=oLd.substring(0,oLd.length-1);
+			sCreen.value=nEw;
+		}
+
+		cLear.onclick=function() {
+			clear_all();
+		}
+		
+
+		
+
+	}
+
+	</script>
+	
+	<style type="text/css">
+	
+		#calculator{
+		    margin: 15px auto;
+		    width:330px;
+		    height:330px;
+		    border: 1px solid lightgray;
+		    background-color:darkgrey;
+		    padding:15px;
+		}
+
+		/*screen*/
+		#shuRu{
+		    margin-top:15px;
+		}
+		.screen{
+		    margin-top:5px;
+		    width:300px;
+		    height:40px;
+		    text-align: right;
+		    padding-right:10px;
+		    font-size:20px;
+		}
+		#keys{
+		    border:1px solid lightgray;
+		    height:223px;
+		    margin-top:25px;
+		    padding:8px;
+		}
+		#keys .last{
+		    margin-right:0px;
+		}
+		#keys .buttons,#keys .num_buttons {
+		    float:left;
+		    width: 42px;
+		    height: 36px;
+		    text-align:center;
+		    background-color:lightgray;
+		    margin: 0 17px 20px 0;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div id="calculator">
+    <div id="shuRu">
+        <!--screen输入栏-->
+        <div class="screen">
+            <input type="text" id="screenName" name="screenName" class="screen">
+        </div>
+    </div>
+    <div id="keys">
+        <!-- j -->
+        <!--第一排-->
+        <input type="button" id="sEv" value="7" class="num_buttons">
+        <input type="button" id="eIg" value="8" class="num_buttons">
+        <input type="button" id="nIn" value="9" class="num_buttons">
+        <input type="button" id="bAck" value="Back" class="buttons">
+        <input type="button" id="cLear" value="C" class="buttons" style="margin-right:0px">
+        <!--第二排-->
+        <input type="button" id="fOu" value="4" class="num_buttons">
+        <input type="button" id="fIv" value="5" class="num_buttons">
+        <input type="button" id="sIx" value="6" class="num_buttons">
+        <input type="button" id="mUltiply" value="*" class="buttons">
+        <input type="button" id="dIvided" value="/" class="buttons" style="margin-right:0px">
+        <!--第三排-->
+        <input type="button" id="oNe" value="1" class="num_buttons">
+        <input type="button" id="tWo" value="2" class="num_buttons">
+        <input type="button" id="tHr" value="3" class="num_buttons">
+        <input type="button" id="pLus" value="+" class="buttons">
+        <input type="button" id="mInus" value="-" class="buttons" style="margin-right:0px">
+        <!--第四排-->
+        <input type="button" id="oneZero" value="0" class="num_buttons">
+        <input type="button" id="doubleZero" value="00" class="num_buttons">
+        <input type="button" id="pOint" value="." class="num_buttons">
+        <input type="button" id="rEmainder" value="%" class="buttons">
+        <input type="button" id="eQual" value="=" class="buttons" style="margin-right:0px">
+    </div>
+    
+</body>
+</html>

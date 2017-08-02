@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>text_0726</title>
+
+<link href="8-tab.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	window.onload=function()
+    {
+        var aBtn=document.getElementsByTagName('input');
+        var aDiv=document.getElementsByTagName('div');
+        var i=0;
+        
+        for(i=0;i<aBtn.length;i++)
+        {
+            aBtn[i].index=i;
+            aBtn[i].onclick=function()
+            {
+                for(i=0;i<aBtn.length;i++)
+                {
+                    aBtn[i].className='';
+                    aDiv[i].style.display='none';
+                }
+				this.className='active';
+				aDiv[this.index].style.display='block';
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <input class="active" type="button" value="1"/>
+    <input type="button" value="2"/>
+    <input type="button" value="3"/>
+    
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+
+</body>
+</html>

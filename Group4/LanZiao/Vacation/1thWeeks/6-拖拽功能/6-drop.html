@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+
+
+	<script>
+
+	//onkeydown 事件会在用户按下一个键盘按键时发生。
+	//书上91页开始。
+	//96页的方法
+		
+		window.onload=function() {
+
+			var tag = document.getElementById('tag');
+			var taste = document.getElementById('taste');
+			var taste_in = document.getElementById('taste_in');
+			var tagCon = document.getElementsByClassName('tagContainer');
+
+			var arr=[];
+
+			tag.onkeydown = function () {
+			
+
+			if (event.keyCode==13||event.keyCode==32||event.keyCode==188||tag.value==0){
+
+				var shuru = tag.value.trim().split(/,|，|、|\s|\n|\r|\t/);//split:从括号里参数指定的地方分割 
+
+				for (var i = 0;i<shuru.length;i++) {
+					var c_div = document.createElement('div'); //创建新元素div
+					c_div.innerHTML = shuru[i];
+					tagCon[0].appendChild(c_div);
+					tag.value=null;
+
+					arr.push(shuru[i]);
+				}
+				
+			}
+
+			
+		}
+
+		}
+
+	</script>
+
+
+	<style>
+		* {
+		  margin:0;
+		  padding: 0;
+		}
+
+		textarea,
+		button,
+		input {
+		  margin:10px;
+		  float: left;
+		}
+		textarea,
+		input {
+		  border: 1px solid CornflowerBlue;
+		  color: CornflowerBlue;
+		  background-color: white;
+		  width: 250px;
+		  height: 50px;
+		  border-radius: 25px;
+		  padding-left: 10px;
+		}
+		textarea {
+		  clear: both;
+		  overflow: hidden;
+		}
+		#taste_in {
+		  border: 1px solid CornflowerBlue;
+		  color: CornflowerBlue;
+		  background-color: white;
+		  width: 70px;
+		  height: 70px;
+		  border-radius: 35px;
+		}
+
+		#taste_in:hover {
+		  background-color: CornflowerBlue;
+		  color: white;
+		}
+
+		textarea:focus,
+		button:focus,
+		input:focus {
+		  outline-width: 0px;
+		}
+
+		.tagContainer,
+		.hobbyContainer {
+		  clear: both;
+		}
+		.tagContainer>div,
+		.hobbyContainer>div {
+		  animation: fadein 1s;
+		  float: left;
+		  height: 150px;
+		  width: 150px;
+		  border-radius: 75px;
+		  margin: 1px;
+		  color: LemonChiffon ;
+		  background-color: CornflowerBlue;
+		  text-align: center;
+		  line-height: 150px;
+		}
+		.tagContainer>div:hover,
+		.hobbyContainer>div:hover {
+		  background-color: lightgreen;
+		}
+		@-webkit-keyframes fadein {
+		0% {
+		  opacity: 0;
+		}
+		100% {
+		  opacity: 100%;
+		  }
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<textarea id="tag" ></textarea>
+	<div class="tagContainer">
+		
+	</div>
+
+
+	<textarea id="taste"></textarea>
+	<input type="button" id="taste_in" value="确认兴趣"/>
+
+  	<div class="hobbyContainer">
+  		
+  	</div>
+	
+</body>
+</html>

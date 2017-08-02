@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul,ol{
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+.scroll{
+	width: 800px;
+	height: 600px;
+	margin: 100px auto;
+	border: 1px solid #ccc;
+	padding: 7px;
+	overflow: hidden;
+	position: relative;
+}
+.box{
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+.box ul{
+	width: 500%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.box ul li{
+	float: left;
+}
+.scroll ol{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+
+}
+.scroll ol li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: #888888;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 50%;
+	background-color: #888888;             
+	margin-left:10px ;
+	cursor: pointer;
+}
+.scroll ol li.current{
+	background-color:#313131;
+}
