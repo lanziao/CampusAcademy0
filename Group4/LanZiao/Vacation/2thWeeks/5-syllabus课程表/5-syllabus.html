@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>5-syllabus</title>
+	<link rel="stylesheet" href="">
+<!-- 	<script src="../../../move.js"></script> -->
+
+<script type="text/JavaScript">
+
+	window.onload = function () {
+
+		var change_datas = null; 
+
+		function load() {
+
+		   	var xmlhttp;
+
+		    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera,Safari
+
+		    	xmlhttp= new XMLHttpRequest();
+
+		    }
+		    else{// code for IE6, IE5
+
+		    	xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+
+		    } 
+
+		    var url="http://study.163.com/webDev/hotcouresByCategory.htm";
+
+		   	xmlhttp.open("GET", url, true);
+
+		   	xmlhttp.send();
+
+		    xmlhttp.onreadystatechange = function(){
+
+		    	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {//获得了请求数据
+
+					change_datas =eval(xmlhttp.responseText);
+					car_content(change_datas);          
+
+		      	}
+
+		   	}
+
+		}
+
+		function car_content(content){
+			
+			for(let i=0;i<carPic.length;i++){
+				debugger;
+				carPic[i].style.backgroundImage='url'+'('+content[8+i].bigPhotoUrl+')';
+				showPic[i].style.backgroundImage='url'+'('+content[8+i].bigPhotoUrl+')';
+				txt[i].innerHTML=content[8+i].description;
+				
+				carPic[i].onclick = function () {
+					window.location.href='http://study.163.com/course/introduction/'+content[8+noW].id+'.htm';
+				}
+
+			}
+		}
+		
+		load();
+
+
+		
+		//获取当前的不在行间的样式的函数：
+		function getStyle(obj, attr) {
+			if (obj.currentStyle) {
+				return obj.currentStyle[attr];
+			} else {
+				return getComputedStyle(obj, false)[attr];
+			}
+		}
+
+
+		function startMove (obj,attr,iTarget) {	//obj是要运动的东西。attr是要运动的属性（宽？高？透明度？）。iTarget是运动的目标值
+
+			clearInterval(obj.timer);
+
+			obj.timer=setInterval(function() {
+				var iCur = 0;
+
+				if (attr=='opacity') {
+					iCur=parseInt(parseFloat(getStyle(obj,attr))*100);//处理透明度.小数字符串转浮点数转整数。小数直接变成整数处理
+				}
+				else {
+					iCur=parseInt(getStyle(obj,attr));
+				}
+
+				var iS = (iTarget-iCur)/6;//缓冲运动的速度
+				iS=iS>0?Math.ceil(iS):Math.floor(iS);//取整
+
+				// if (alpha<iTarget) {
+				// 	iS = 5;
+				// }
+				// else if (alpha>iTarget) {
+				// 	iS = -5;
+				// }
+				if (iCur==iTarget) {
+					clearInterval(obj.timer);
+				}
+				else {
+
+					if (attr == 'opacity') {
+						obj.style.filter='alpha(opacity:'+(iCur+iS)+')';
+						obj.style.opacity=(iCur+iS)/100;
+					}
+					else {
+						// iCur+=iS;
+						obj.style[attr]=iCur+iS+'px';
+					}
+				}
+
+			},30);
+
+		}
+
+		function tab () { //选项切换函数
+
+			for (var i=0;i<showPic.length;i++) {
+					startMove(showPic[i],'opacity',30) //全部变成30。
+					startMove(carPic[i],'opacity',0);
+					txt[i].style.display = 'none';
+				}
+				startMove(showPic[noW],'opacity',100);
+				startMove(carPic[noW],'opacity',100);
+				txt[noW].style.display = 'block';
+		}
+
+
+		var noW = 0;
+
+		var showUl = document.getElementById('show_area');
+		var carUl = document.getElementById('carousel_area');
+		var showPic = showUl.getElementsByTagName('li');
+		var carPic = carUl.getElementsByTagName('li');
+		var btnPre = document.getElementById('pre');
+		var btnNext = document.getElementById('next');
+
+		var carousel_box = document.getElementById('carousel_box');
+
+		var txt = carousel_box.getElementsByClassName('summary');
+
+
+		for (var i=0;i<showPic.length;i++) {
+
+			showPic[i].index=i; //获取索引值
+
+			showPic[i].timer = null;
+			showPic[i].alpha = 30;
+			
+			showPic[i].onmouseover = function () {
+				startMove(this,'opacity',100);
+			}
+			showPic[i].onmouseout = function() {
+
+				if (this.index != noW) { //如果是当前选中的按钮，移出也不会变成30透明值
+					startMove(this,'opacity',30);
+				}
+			}
+
+			showPic[i].onclick = function() {
+
+				if(this.index==noW) return;
+
+				// for (var i=0;i<showPic.length;i++) {
+				// 	startMove(showPic[i],'opacity',30) //全部变成30。
+				// 	startMove(carPic[i],'opacity',0);
+				// }
+				// startMove(this,'opacity',100);
+				// startMove(carPic[this.index],'opacity',100);
+
+				noW=this.index; //更新noW(当前选中)
+
+				tab();
+
+			}
+
+		}
+
+		btnPre.onclick = function () {
+			noW--;
+			if(noW==-1) {
+				noW=showPic.length-1;
+			}
+			tab();
+		}
+
+		btnNext.onclick = function () {
+			noW++;
+			if(noW==showPic.length) {
+				noW=0;
+			}
+			tab();
+		}
+
+		var timer1 = setInterval(btnNext.onclick, 3000);
+		carUl.onmouseover = function() {
+			clearInterval(timer1);
+		}
+		carUl.onmouseout = function() {
+			timer1 = setInterval(btnNext.onclick, 3000);
+		}
+		showUl.onmouseover = function() {
+			clearInterval(timer1);
+		}
+		showUl.onmouseout = function() {
+			timer1 = setInterval(btnNext.onclick, 3000);
+		}
+
+	}
+
+	</script>
+
+
+	<style>
+
+		li {
+			list-style: none;
+		}
+
+		#carousel_box {
+			width: 100%;
+			height: 100%;
+		}
+
+		#carousel_area {
+			margin: auto auto;
+			padding: 0;
+			position: relative;
+			width: 480px;
+			height: 320px;
+		}
+
+		#show_area {
+			margin: auto auto;
+			padding: 0;
+			width: 480px;
+			height: 90px;
+			background: black;
+		}
+
+		#show_area li {
+			display: inline-block;
+			width: 24.26%;
+			height: 100%;
+			background: no-repeat;
+			background-size: 116.44px 90px;
+		}
+
+		#show_area li:hover {
+			cursor: pointer;
+		}
+
+
+		#show_area li:nth-of-type(2),#show_area li:nth-of-type(3),#show_area li:nth-of-type(4) {
+			opacity:0.3;
+			filter:Alpha(opacity=30);
+		}
+
+		#carousel_area li {
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: no-repeat;
+			background-size: 480px 320px;
+		}
+
+		#carousel_area li:hover {
+			cursor: pointer;
+		}
+
+
+		#carousel_area li:nth-of-type(2),#carousel_area li:nth-of-type(3),#carousel_area li:nth-of-type(4) {
+			opacity:0;
+			filter:Alpha(opacity=0)
+		}
+
+		/*#carousel_area li:nth-of-type(3) {
+			opacity:0;
+			filter:Alpha(opacity=0)
+		}
+
+		#carousel_area li:nth-of-type(4) {
+			opacity:0;
+			filter:Alpha(opacity=0)
+		}*/
+
+		#carousel_area span {
+			position: absolute;
+			z-index: 9999;
+			width: 65px;
+			height: 65px;
+			top: 46%;
+		}
+
+		#carousel_area #pre {			
+			background: url(pre.png) no-repeat center;
+			left: 0;
+		}
+
+		#carousel_area #next {
+			background: url(next.png) no-repeat center;
+			right: 0;
+		}
+
+		#carousel_area #pre:hover,#carousel_area #next:hover {
+			cursor: pointer;
+			background-size: 65px 65px;
+		}
+
+		#carousel_box .summary {
+			margin: auto auto;
+			padding: 0;
+			width: 480px;
+			height: 200px;
+		}
+	
+		#carousel_box .summary:nth-of-type(2),#carousel_box .summary:nth-of-type(3),#carousel_box .summary:nth-of-type(4) {
+			display: none;
+		}
+		
+		
+	</style>
+
+</head>
+<body>
+	<div id="carousel_box">
+
+	
+		<ul id="carousel_area">
+			<span id="pre"></span>
+			<span id="next"></span>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul id="show_area">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="summary"></div>
+		<div class="summary"></div>
+		<div class="summary"></div>
+		<div class="summary"></div>
+
+	</div>
+
+
+
+<!-- <button type="button"  onclick="load()" >ChangeContent</button> -->
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>1-nav</title>
+	<link rel="stylesheet" href="clearer.css">
+
+
+	<script type="text/javascript">
+
+		window.onload=function(){
+
+			var nAv = document.getElementsByClassName('nav');
+			var bOx = document.getElementsByClassName('box');
+			var bigBox = document.getElementById('bigBox')
+			var lI = bigBox.getElementsByTagName('li');
+			var bOx2 = document.getElementsByClassName('box2');
+
+			for(let j=0;j<nAv.length;j++) {
+				
+				nAv[j].onmouseover=function(){
+					bOx[j].style.display="block";
+				};
+				nAv[j].onmouseout=function(){
+						bOx[j].style.display="none";
+				};
+
+				bOx[j].onmouseover=function(){
+					bOx[j].style.display="block";
+				}
+
+				bOx[j].onmouseout=function(){
+					bOx[j].style.display="none";
+				}
+				
+			}
+
+			for(let i=0;i<lI.length;i++) {
+
+				lI[i].onmouseover=function(){
+					bOx2[i].style.display="block";
+				};
+
+				lI[i].onmouseout=function(){
+					bOx2[i].style.display="none";
+				};
+
+				bOx2[i].onmouseover=function(){
+
+					bOx2[i].style.display="block";
+
+					if(0<=i&&i<=3){
+						bOx[0].style.display="block";
+					}
+					else if(4<=i&&i<=7){
+						bOx[1].style.display="block";
+					}
+					else if(8<=i&&i<=11){
+						bOx[2].style.display="block";
+					}
+					else {
+						bOx[3].style.display="block";
+					}
+				}
+
+				bOx2[i].onmouseout=function(){
+					bOx2[i].style.display="none";
+
+					if(0<=i&&i<=3){
+						bOx[0].style.display="none";
+					}
+					else if(4<=i&&i<=7){
+						bOx[1].style.display="none";
+					}
+					else if(8<=i&&i<=11){
+						bOx[2].style.display="none";
+					}
+					else {
+						bOx[3].style.display="none";
+					}
+				}
+				
+			}
+
+
+		}
+
+	</script>
+
+
+
+	<style>
+		li {
+			list-style: none;
+		}
+
+		a {
+			color: black;
+		}
+
+		#content {
+			position: relative;
+			width: 660px;
+			height: 160px;
+			margin: 20px auto;
+		}
+
+		.nav {
+			float: left;
+			background: red;
+			border: solid #FFF700 2px;
+			padding-right: 50px;
+			padding-left: 50px;
+
+		}
+
+		.nav:hover {
+			cursor: pointer;
+		}
+
+		#bigBox {
+			float: left;
+			position: relative;
+			width: 544px;
+			height: 560px;
+		}
+
+		.box {
+			width: 132px;
+			border: solid black 2px;
+			position: absolute;
+
+			display: none;
+		}
+
+		.box:nth-child(1) {
+			left: 0;
+		}
+
+		.box:nth-child(2) {
+			left: 136px;
+		}
+
+		.box:nth-child(3) {
+			left: 272px;
+		}
+
+		.box:nth-child(4) {
+			left: 408px;
+		}
+
+		.box li {
+			display: block;
+			height: 30px;
+			border: solid blue 2px;
+		}
+
+		.box li:hover {
+			background: blue;
+			border: solid white 2px;
+			cursor: pointer;
+		}
+
+		.box li a {
+			display: block;
+			height: 30px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		#bigBox2 {
+			position: absolute;
+			height: 144px;
+			left: 136px;
+			top: 25px;
+		}
+
+		#bigBox2 .box2 {
+			position: absolute;
+			width: 120px;
+			height: 50px;
+			border: solid black 2px;
+
+			display: none;
+		}
+
+		#bigBox2 .box2:nth-child(1),.box2:nth-child(5),.box2:nth-child(9),.box2:nth-child(13) {
+			top: 0;
+		}
+		#bigBox2 .box2:nth-child(2),.box2:nth-child(6),.box2:nth-child(10),.box2:nth-child(14) {
+			top: 34px;
+		}
+		#bigBox2 .box2:nth-child(3),.box2:nth-child(7),.box2:nth-child(11),.box2:nth-child(15) {
+			top: 68px;
+		}
+		#bigBox2 .box2:nth-child(4),.box2:nth-child(8),.box2:nth-child(12),.box2:nth-child(16) {
+			top: 102px;
+		}
+
+		#bigBox2 .box2:nth-child(1),.box2:nth-child(2),.box2:nth-child(3),.box2:nth-child(4) {
+			left: -2px;
+		}
+
+		#bigBox2 .box2:nth-child(5),.box2:nth-child(6),.box2:nth-child(7),.box2:nth-child(8) {
+			left: 134px;
+		}
+
+		#bigBox2 .box2:nth-child(9),.box2:nth-child(10),.box2:nth-child(11),.box2:nth-child(12) {
+			left: 270px;
+		}
+
+		#bigBox2 .box2:nth-child(13),.box2:nth-child(14),.box2:nth-child(15),.box2:nth-child(16) {
+			left: 406px;
+		}
+
+
+
+		.box2 li {
+			display: block;
+			height: 20px;
+			border: solid white 2px;
+			border-bottom: solid black 2px;
+			background: #17CB2D;
+		}
+
+		.box2 li a:hover {
+			color: white;
+		}
+
+		.box2 li a {
+			display: block;
+			height: 20px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<div id="content">
+
+	<div class="nav">动画</div>
+	<div class="nav">番剧</div>
+	<div class="nav">鬼畜</div>
+	<div class="nav">时尚</div>
+	
+	<div id="bigBox">
+
+		<div class="box">
+			<li><a href="#">MAD.AMV</a></li>
+			<li><a href="#">MAD.3D</a></li>
+			<li><a href="#">短片.手书.配音</a></li>
+			<li><a href="#">综合</a></li>
+		</div>
+
+		
+		
+		<div class="box">
+			<li><a href="#">连载动画</a></li>
+			<li><a href="#">完结动画</a></li>
+			<li><a href="#">资讯</a></li>
+			<li><a href="#">新番时间表V</a></li>
+		</div>
+
+			
+		
+		<div class="box">
+			<li><a href="#">鬼畜调教</a></li>
+			<li><a href="#">音MAD</a></li>
+			<li><a href="#">人力VOCALOID</a></li>
+			<li><a href="#">教程演示</a></li>
+		</div>
+
+
+		
+		<div class="box">
+			<li><a href="#">美妆</a></li>
+			<li><a href="#">服饰</a></li>
+			<li><a href="#">健身</a></li>
+			<li><a href="#">资讯</a></li>
+		</div>
+
+	</div>
+
+	<div id="bigBox2">
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+		<div class="box2">
+			<li><a href="#">贪婪</a></li>
+			<li><a href="#">清高</a></li>
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

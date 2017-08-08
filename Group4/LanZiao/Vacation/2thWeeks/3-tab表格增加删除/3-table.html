@@ -1,0 +1,108 @@
+<!DOCTYPE>  
+<html>  
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <title>3-table</title>  
+
+
+    <script>  
+   
+		window.onload = function () {
+
+
+
+			var btn_a = document.getElementById('btn_a');
+			var city = document.getElementById('city');
+			var airq = document.getElementById('airq');
+			var tAble = document.getElementById('tAble');
+			var tr = document.getElementsByTagName("tr");
+			var btn_d = tAble.getElementsByClassName('btn_d');
+
+			var aqiData = {};
+
+			tAble.addEventListener("click", function(e) {
+	        if (e.target && e.target.nodeName === "BUTTON") {
+	            delBtnHandle(e.target);
+	        	}
+	        })
+
+
+
+			function delBtnHandle(target) {
+				debugger;
+				var tr_dd=target.parentNode.parentNode;
+				tr_dd.parentNode.removeChild(tr_dd);
+
+				var tr_d = target.parentElement.parentElement;
+   				var city_d = tr_d.children[0].innerHTML;
+
+    			delete aqiData[city_d];
+
+			}
+
+			btn_a.onclick = function () {
+
+				var city = document.getElementById('city');
+				var airq = document.getElementById('airq');
+
+				var city_v = city.value.trim();
+				var airq_v = airq.value.trim();
+
+				if (!city_v.match(/^[A-Za-z\u4E00-\u9FA5]+$/)) {
+			        alert("城市名必须为中英文字符！");
+			        return;
+			    }
+			    if (!airq_v.match(/^\d+$/)) {
+			        alert("空气质量指数必须为整数！");
+			        return;
+			    }
+
+			    aqiData[city_v] = airq_v;
+
+			    // for (var city_v in aqiData) {
+
+					var tr_c=document.createElement("tr");
+					var city_c=document.createElement("td");
+					var airq_c=document.createElement("td");
+					var del_c=document.createElement("td");
+					del_c.innerHTML="<button class='btn_d'>删除</button>";
+
+					city_c.innerHTML=city.value;
+					airq_c.innerHTML=airq.value;
+
+					tAble.appendChild(tr_c);
+					tr_c.appendChild(city_c);
+					tr_c.appendChild(airq_c);
+					tr_c.appendChild(del_c);
+				// }
+			}
+
+
+
+
+		}
+
+	</script>  
+</head>  
+<body>  
+<div>
+    城市名称: <input type="text" name="city" id="city" />
+    空气质量: <input type="text" name="airq" id="airq" />
+    <br><br>  
+    <button id="btn_a">提交</button>  
+    <br><br>  
+    <hr>  
+    <br><br>  
+    <table id="tAble" border="1"  >  
+
+        <tr>  
+            <th>城市名称</th>  
+            <th>空气质量</th>
+            <th>删除</th>  
+        </tr>
+        
+    </table>  
+</div>  
+</body>  
+  
+</html>  

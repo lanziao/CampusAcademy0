@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="clearer.css">
+
+	<script>
+	
+
+
+	window.onload = function() {
+
+		var bigBox = document.getElementById('bigBox');
+		var page = document.getElementsByClassName('page');
+
+		var timer = null;
+
+		var a =true;
+
+		var g = window.innerHeight;
+
+		// var s = Math.round(g/5);
+		// var ji= s*5;
+
+
+	    bigBox.onmousewheel=function() {
+
+	    		//某个量加window.innerHeight
+
+	    		
+    			if(event.wheelDelta>0) {
+					up();
+    			}
+    			else if(event.wheelDelta<0) {
+    				down();
+    			}
+	    			
+	        	
+	    	}
+
+	    		function up () {
+	    			var sum=0;
+	    			var g = window.innerHeight;
+	    			var s = Math.round(g/5);
+					var ji= s*5;
+	    			if (a){
+	    				a=false;
+		    			timer=setInterval(
+		    				function() {
+		    					var n = document.body.scrollTop || document.documentElement.scrollTop;
+		    					document.body.scrollTop = document.documentElement.scrollTop =n-s;
+		    					sum+=s;
+		    					if (sum==ji) {
+				    				clearInterval(timer);
+				    				a=true;
+				    			}
+		    				},90);
+		    		}
+	    			
+	    		}
+
+	    		function down () {
+	    			var sum=0;
+	    			var g = window.innerHeight;
+	    			var s = Math.round(g/5);
+					var ji= s*5;
+	    			if(a){
+	    				a=false;
+		    			timer=setInterval(
+		    				function() {
+		    					var m = document.body.scrollTop || document.documentElement.scrollTop;
+		    					var i = document.body.scrollTop = document.documentElement.scrollTop = m+s;
+		    					sum+=s;
+		    					if (sum==ji) {
+				    				clearInterval(timer);
+				    				a=true;
+				    			}
+		    				},90);
+	    			
+	    			}
+	    		}
+
+
+	}
+
+
+	</script>
+
+	<style>
+/*	@font-face
+	{
+		font-family: WisdomScript;
+		src: url('C:\Users\无喜i\Downloads\0MRedocn_2012122504165485_1842218\WisdomScript\Wisdom Script.otf');
+	}
+*/
+	body {
+		overflow: hidden;
+	}
+
+	#bigBox {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	#bigBox div {
+		height: 100vh;
+		text-align: center;
+		line-height: 100vh;
+		font-size: 44px;
+		color: #177cb0;
+		font-family: "Caflisch Script";
+	}
+
+	#bigBox div:nth-child(1) {
+		background: #def2e8;
+	}
+
+	#bigBox div:nth-child(2) {
+		background: #a3e2c5;
+	}
+
+	#bigBox div:nth-child(3) {
+		background: #f3f8f1;
+	}
+
+	#bigBox div:nth-child(4) {
+		background: #d7ecd1;
+	}
+
+	#bigBox a {
+		position: absolute;
+		margin: 0 auto;
+		top:380vh;
+		left: 48%;
+		background: #789262;
+		font-size: 20px;
+		width:60px;
+		height: 38px;
+		text-align: center;
+		line-height: 38px;
+		border: solid #b36d61 2px;
+		border-radius: 20px;
+		color: #177cb0;
+	}
+
+	#bigBox a:hover {
+		border: solid #c3272b 2px;
+		border-radius: 50px;
+		background: f3f8f1;
+	}
+		
+	</style>
+
+
+
+	
+
+
+</head>
+<body>
+
+<div id="bigBox">
+
+	<div class="page">My love is like the grasses</div>
+
+	<div class="page">Hidden in the deep mountains</div>
+
+	<div class="page">Though its abundance increase</div>
+
+	<div class="page">There is none that knows</div>
+
+	<a id="toTop" href="javascript:scroll(0,0)">Top</a>
+
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>4-login</title>
+ 
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.3.2/jquery.min.js"></script>
+ 
+    <style type="text/css">
+    	#btnOpen {
+			margin: 0 auto;
+    	}
+
+        #popUp {
+            position: absolute;
+            z-index: 10000;
+            width: 370px;
+            float: left;
+            display: none;
+            background-color: #fff;
+        }
+        #drag {
+        	margin: 0;
+        	padding: 0;
+        	width:370px;
+        	height: 20px;
+        	background: #9D9D9D;
+        }
+
+        #close {
+        	float: right;
+        	background:none;
+        	outline:none;  
+   			border:none; 
+        }
+
+        #close:hover {
+        	cursor: pointer;
+        }
+
+        #cover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #000;
+            top: 0;
+            left: 0;
+            filter: alpha(opacity=30);
+            -moz-opacity: 0.30;
+            -khtml-opacity: 0.30;
+            opacity: 0.30;
+            z-index: 9999;
+            display: none;
+        }
+        
+    </style>
+ 
+    <script type="text/javascript">
+        window.onload = function () {
+            var btnOpen = document.getElementById('btnOpen');
+            var popUp = document.getElementById('popUp');
+            var cover = document.getElementById('cover');
+            var cLose = document.getElementById('close');
+            var btnLogin = document.getElementById('btnLogin');
+            var txtName = document.getElementById('txtName');
+            var txtPwd = document.getElementById('txtPwd');
+            var drag = document.getElementById('drag');
+
+            function show () {
+            	var logOnEvent = event;
+                popUp.style.display = 'block';
+                cover.style.display = 'block';
+
+                logOnEvent.cancelBubble = true;
+            }
+
+
+            function hide () {
+            	var logOnEvent = event;
+            	popUp.style.display = 'none';
+                cover.style.display = 'none';
+
+                logOnEvent.cancelBubble = true;
+            }
+
+            btnLogin.onclick = function verify () {
+            	if (txtName.value ==0 || txtPwd.value.length == 0) {
+            		alert('帐号和密码不能为空！');
+            	}
+            	else if (txtPwd.value.length<6) {
+            		alert('密码至少为6位！');
+            	}
+            	else if (txtName.value.match(/[\d]/g,'')) {
+            		alert('用户名只能为英文和汉字！');
+            	}
+
+            	else {
+            		alert('注册成功！');
+
+            		txtName.value='';
+            		txtPwd.value='';
+
+            		var logOnEvent = event;
+
+            		popUp.style.display = 'none';
+                	cover.style.display = 'none';
+
+                	logOnEvent.cancelBubble = true;
+            	}
+            }
+
+            btnOpen.onclick=function(){show ()};
+            popUp.onclick=function(){show ()};
+            cLose.onclick=function(){hide ()};
+            document.onclick=function(){hide ()};
+
+            
+
+            	drag.onmousedown = function (evt) {
+                var oEvent = evt || event;
+                //获取按下鼠标到div left  top的距离
+                var distanceX = oEvent.clientX - popUp.offsetLeft;
+                var distanceY = oEvent.clientY - popUp.offsetTop;
+                //添加doc滑动事件
+                document.onmousemove = function (evt) {
+                    var oEvent = evt || event;
+                    //重新计算div的left top值
+                    var left = oEvent.clientX - distanceX;
+                    var top = oEvent.clientY - distanceY;
+                    //left  当小于等于零时，设置为零 防止div拖出document之外
+                    if (left <= 0) {
+                        left = 0;
+                    }
+                    //当left 超过文档右边界  设置为右边界
+                    else if (left >= document.documentElement.clientWidth - popUp.offsetWidth) {
+                        left = document.documentElement.clientWidth - popUp.offsetWidth;
+                    }
+                    if (top <= 0) {
+                        top = 0;
+                    }
+                    else if (top >= document.documentElement.clientHeight - popUp.offsetHeight) {
+                        top = document.documentElement.clientHeight - popUp.offsetHeight;
+                    }
+                    //重新给div赋值
+                    popUp.style.top = top + "px";
+                    popUp.style.left = left + "px";
+                }
+                //添加鼠标抬起事件
+                drag.onmouseup = function () {
+                    //清空事件
+                    document.onmousemove = null;
+                    popUp.onmouseup = null;
+                }
+            }
+
+         
+
+            
+            // popUp.onclick = show();
+            // btnOpen.onclick = show();
+
+            // document.onclick = hide();
+            // cLose.onclick = hide();
+            
+        }
+    </script>
+ 
+</head>
+<body>
+    <input type="button" id="btnOpen" value="点击弹出窗口"></input>
+    <div id="popUp">
+    <div id="drag">
+    	<input type="button" id="close" value="X" />
+    </div>
+    	
+        <p>
+            账号：<input id="txtName" type="text" /></p>
+        <p>
+            密码：<input id="txtPwd" type="password" /></p>
+        <p>
+            <input id="btnLogin" type="button" value="注 册" /></p>
+    </div>
+    <div id="cover">
+    </div>
+</body>
+</html>
