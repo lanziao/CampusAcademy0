@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>3-forecast</title>
+	<link rel="stylesheet" href="css/clearer.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/3-forecast.css">
+	<script src="js/3-forecast.js"></script>
+
+
+
+</head>
+<body>
+
+	<div id="head">
+		<input type="button" value="当前" class="button actived" />
+	    <input type="button" value="今日" class="button"/>
+	    <input type="button" value="未来一周" class="button"/>
+	</div>
+
+	<div id="content">    
+	    <div class="showBox">
+
+	    	<div class="left">
+		    	<h2 id="nowTemp"></h2>
+		    	<li id="nowImg"></li>
+		    </div>
+
+		    <div class="center">
+		    	<h2 id="nowText"></h2>
+		    	<span class="humidity"></span><br><br>
+
+		    	<span class="wind_direction"></span>
+
+		    	<span class="wind_speed"></span>
+		    	<br>
+
+		    	<span class="wind_scale"></span><br>
+
+		    	<span class="aqi"></span>&nbsp;
+		    	<span class="quality"></span>
+		    	<br>
+		    	<span class="pm25"></span>
+		    	<span class="pm10"></span>
+
+		    </div>
+
+		    <div class="right">
+		    	<span class="city"></span>
+		    	<span class="city_logo"></span>
+		    </div>
+
+	    </div>
+
+	    <div class="showBox">
+		    <ul id="today">
+		    	<li class="dressing">
+		    		<h3 class="suggestH">衣着建议</h3>
+		    		<span class="suggestS"></span>
+		    		<span class="suggestT"></span>
+		    	</li>
+
+		    	<li class="uv">
+		    		<h3 class="suggestH">防晒建议</h3>
+		    		<span class="suggestS"></span>
+		    		<span class="suggestT"></span>
+		    	</li>
+
+		    	<li class="car_washing">
+		    		<h3 class="suggestH">洗车建议</h3>
+		    		<span class="suggestS"></span>
+		    		<span class="suggestT"></span>
+		    	</li>
+
+		    	<li class="sport">
+		    		<h3 class="suggestH">运动建议</h3>
+		    		<span class="suggestS"></span>
+		    		<span class="suggestT"></span>
+		    	</li>
+		    </ul>
+	    </div>
+	    
+	    <div class="showBox">
+
+	    	<!-- <div id="sortBtn">
+	    		<input type="按照最高温排序" id="highBtn" />
+	    	</div> -->
+
+		    <ul id="future">
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    	<li>
+		    		<span class="date"></span>
+		    		<span class="tempRange"></span>
+		    		<span class="text"></span>
+		    		<span class="wind"></span>
+		    	</li>
+
+		    </ul>
+	    </div>
+
+	</div>
+
+</body>
+</html>

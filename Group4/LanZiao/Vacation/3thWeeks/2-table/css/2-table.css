@@ -1,0 +1,97 @@
+
+		.state1{
+			color:#aaa;
+		}
+		.state2{
+			color:#000;
+		}
+		.state3{
+			color:red;
+		}
+		.state4{
+			color:green;
+		}
+		#box {
+			width:700px;
+			height: 360px;
+			margin: 0 auto;
+			background: #555;
+			color: #D3D3D3;
+		}
+		#left {
+			float: left;
+			width: 35%;
+			height: 70%;
+			margin-top: 60px;
+		}
+		#right {
+			float: left;
+			width: 60%;
+			height: 70%;
+			margin-top: 60px;
+		}
+		#box #button {
+			display: block;
+			margin:auto;
+			width: 38%;
+			height: 30px;
+			background:  #FFCC02;
+			border: none;
+			color: #FFF;
+			box-shadow: 1px 1px 2px #B6B6B6;
+			border-radius: 4px;
+			text-shadow: 1px 1px 2px #9E3F3F;
+			cursor: pointer;
+		}
+		#box #button:hover {
+			color: #333;
+			background-color: #EBEBEB;
+		}
+		#left p {
+			width: 70%;
+			text-align:right;
+			float:right;
+		}
+		#left #txtSex {
+			margin-top: 40px;
+		}
+		#right {
+			position: relative;
+		}
+		#username {
+			position: absolute;
+			left: 0;
+			top: 20px;
+		}
+		.userspan {
+			position: absolute;
+			left: 175px;
+			top: 20px;
+		}
+		#email {
+			position: absolute;
+			left: 0;
+			top: 72px;
+		}
+		.emailspan {
+			position: absolute;
+			left: 175px;
+			top: 72px;
+		}
+		#message {
+			width: 240px;
+			height: 60px;
+			position: absolute;
+			left: 0;
+			top: 124px;
+		}
+		#sex {
+			position: absolute;
+			left: 0;
+			top: 200px;
+		}
+		.sexspan {
+			position: absolute;
+			left: 50px;
+			top: 200px;
+		}

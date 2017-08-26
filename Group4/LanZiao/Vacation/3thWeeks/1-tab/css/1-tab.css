@@ -1,0 +1,48 @@
+
+input:hover {
+			outline:none;
+		}
+		body {
+			width: auto;
+			height: auto;
+			background: #def2e8;
+		}
+		#head {
+			width: 400px;
+			height: 40px;
+			margin:auto;
+			margin-top: 60px;
+		}
+		#content {
+			width: 400px;
+			height: 200px;
+			margin: 0 auto;
+		}
+		.button {
+			height: 40px;
+			width: 90px;
+			float:left;
+			margin-right: 5px;
+			border-bottom: solid #DDAF41 3px;
+			border-top: solid #def2e8 3px;
+			font-size: 16px;
+		}
+		.actived {
+			outline:none;
+			background: white;
+			border-top: solid #DDAF41 3px;
+			border-bottom: solid white 3px;
+		}
+		.showBox {
+			width: 368px;
+			height: 168px;
+			padding: 16px;
+			background: white;
+		}
+		.showBox:nth-child(2),.showBox:nth-child(3) {
+			display: none;
+		}
+		#content p {
+			font-size: 14px;
+			text-indent:2em;
+		}
